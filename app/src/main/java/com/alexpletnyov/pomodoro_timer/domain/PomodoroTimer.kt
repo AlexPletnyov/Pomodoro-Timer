@@ -1,8 +1,8 @@
 package com.alexpletnyov.pomodoro_timer.domain
 
 data class PomodoroTimer(
-	val pomodoroTime: Long,
-	val breakTime: Long,
-	val longBreakTime: Long,
-	val pomodoroUntilLongBreak: Int
+	var pomodoroTime: Long,
+	var breakTime: Long,
+	var longBreakTime: Long,
+	var pomodoroUntilLongBreak: Int
 )
