@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">Pomodoro-Timer</string>
-    <string name="start">START</string>
-    <string name="pause">PAUSE</string>
-    <string name="resume">RESUME</string>
-    <string name="stop">STOP</string>
+    <string name="start">start</string>
+    <string name="pause">pause</string>
+    <string name="resume">resume</string>
+    <string name="stop">stop</string>
+    <string name="settings">settings</string>
+    <string name="pomodoro">Pomodoro:</string>
+    <string name="_break">Break:</string>
+    <string name="long_break">Long break:</string>
+    <string name="pomodoro_until_long_break">Pomodoro until long break:</string>
+    <string name="save">save</string>
 </resources>

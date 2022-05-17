@@ -2,11 +2,11 @@ package com.alexpletnyov.pomodoro_timer.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
 import com.alexpletnyov.pomodoro_timer.R
+import com.alexpletnyov.pomodoro_timer.domain.PomodoroTimer
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 	private lateinit var buttonPause: Button
 	private lateinit var buttonResume: Button
 	private lateinit var buttonStop: Button
+	private lateinit var buttonSettings: Button
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 		initViews()
 		viewModel.pomodoroTimer.observe(this) {
 			val pomodoroTimer = it
+			timeView.text = viewModel.getTimeLeftText(it.pomodoroTime)
 			buttonStart.setOnClickListener {
 				viewModel.start(pomodoroTimer)
 			}
@@ -41,6 +43,10 @@ class MainActivity : AppCompatActivity() {
 		viewModel.timeLeft.observe(this) {
 			timeView.text = viewModel.getTimeLeftText(it)
 		}
+		buttonSettings.setOnClickListener {
+			val intent = SettingsActivity.newIntentOpenSettings(this)
+			startActivity(intent)
+		}
 	}
 
 	private fun initViews() {
@@ -49,5 +55,6 @@ class MainActivity : AppCompatActivity() {
 		buttonPause = findViewById(R.id.b_pause)
 		buttonResume = findViewById(R.id.b_resume)
 		buttonStop = findViewById(R.id.b_stop)
+		buttonSettings = findViewById(R.id.b_settings)
 	}
 }

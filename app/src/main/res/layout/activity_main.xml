@@ -10,7 +10,8 @@
         android:id="@+id/tv_show_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="00:00"
+        android:textColor="@color/purple_500"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,7 +23,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_show_time">
 
         <Button
             android:id="@+id/b_start"
@@ -48,5 +50,13 @@
             android:layout_height="wrap_content"
             android:text="@string/stop" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/b_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

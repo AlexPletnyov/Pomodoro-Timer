@@ -1,7 +1,6 @@
 package com.alexpletnyov.pomodoro_timer.data
 
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.alexpletnyov.pomodoro_timer.domain.PomodoroTimer
@@ -18,9 +17,9 @@ object PomodoroTimerRepositoryImpl : PomodoroTimerRepository {
 	}
 
 	private const val COUNT_DOWN_INTERVAL = 1000L
-	private const val DEFAULT_POMODORO_TIME = 25_000L
-	private const val DEFAULT_BREAK_TIME = 5_000L
-	private const val DEFAULT_LONG_BREAK_TIME = 15_000L
+	private const val DEFAULT_POMODORO_TIME = 1_500_000L
+	private const val DEFAULT_BREAK_TIME = 300_000L
+	private const val DEFAULT_LONG_BREAK_TIME = 900_000L
 	private const val DEFAULT_POMODORO_UNTIL_LONG_BREAK_TIME = 4
 
 	private var pomodoroTimer: PomodoroTimer
